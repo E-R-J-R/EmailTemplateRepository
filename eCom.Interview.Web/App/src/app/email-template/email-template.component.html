@@ -1,0 +1,38 @@
+<table class="table table-hover table-sm sortable">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col"><a class="text-primary" (click)="sortField('EmailLabel')">Email Label</a> <i class="fa fa-fw fa-sort"></i></th>
+      <th scope="col"><a class="text-primary" (click)="sortField('FromAddress')">From Address</a> <i class="fa fa-fw fa-sort"></i></th>
+      <th scope="col"><a class="text-primary" (click)="sortField('DateUpdated')">Date Updated</a> <i class="fa fa-fw fa-sort"></i></th>
+    </tr>
+    <tr>
+      <th><input type="text" class="col-sm-3" [(ngModel)]="searchLabel" (blur)="onLabelBlur()" placeholder="Search Email Label"></th>
+      <th><input type="text" [(ngModel)]="searchAddress" (blur)="onAddressBlur()" placeholder="Search From Address"></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of emailTemplates" >
+      <td>
+        <div>
+          <a href="#" class="text-primary" (click)="item.toggle=!item.toggle"><p>{{item.EmailLabel}}</p></a>
+        </div>
+        <div *ngIf="item.toggle">
+          <div *ngFor="let rev of item.Versions">
+            <p>{{rev.EmailLabel}}</p>
+          </div>
+        </div>
+      </td>
+      <td><p>{{item.FromAddress}}</p></td>
+      <td><p>{{item.DateUpdated | date: 'MMMM dd, yyyy'}}</p></td> 
+    </tr>
+  </tbody>
+</table>
+<ngb-pagination
+    [(page)]="page"
+    [pageSize]="pageSize"
+    [collectionSize]="totalRecordCount"
+    [maxSize]="10"
+    (pageChange)="onPageChange($event)">
+</ngb-pagination>
+
