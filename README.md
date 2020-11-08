@@ -1,0 +1,2 @@
+# EmailTemplateRepository
+Coding Exercise
