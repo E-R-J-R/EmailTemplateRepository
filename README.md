@@ -38,7 +38,7 @@ The tech stack used in the project is as follows:
 
 ![alt text](https://github.com/E-R-J-R/EmailTemplateRepository/blob/main/ReadMe/app_versions.png?raw=true)
 
-3. Sorting and Searching via Email Label and From Address 
+3. Sorting and Searching via Email Label, From Address and Date Updated
 
 ![alt text](https://github.com/E-R-J-R/EmailTemplateRepository/blob/main/ReadMe/app_header.png?raw=true)
 
