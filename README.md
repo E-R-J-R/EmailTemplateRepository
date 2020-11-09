@@ -21,6 +21,8 @@ The tech stack used in the project is as follows:
 
 <h4>Important</h4> Change the XML filepath (AppSettings - TemplateFilePath) in the web.config relative to the project's directory.
 
+<br>
+
 1. Visual Studio 2019 - Open solution and execute API 
 2. Angular CLI - Install Angular CLI (https://cli.angular.io/) 
                - Navigate to eCom.Interview.Web/App and execute command "ng serve"
