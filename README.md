@@ -19,7 +19,7 @@ The tech stack used in the project is as follows:
 
 ## Demo / Prerequisites
 
-<h4>Important</h4> Change the XML filepath (AppSettings - TemplateFilePath) in the web.config relative to the project's directory.
+<h4>Important: Change the XML filepath (AppSettings - TemplateFilePath) in the web.config relative to the project's directory.</h4> 
 
 <br>
 
