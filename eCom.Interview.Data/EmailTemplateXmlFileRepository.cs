@@ -20,7 +20,6 @@ namespace eComEngine.Interview.Data
         {
             var serializer = new System.Xml.Serialization.XmlSerializer(typeof(EmailTemplateCollection));
 
-            //!!!!IMPORTANT - Change the xml file path via web.config - app settings [TemplateFilePath] to your local directory!!!!
             using (var fs = new System.IO.FileStream(xmlFilePath, System.IO.FileMode.Open, System.IO.FileAccess.Read))
             {
                 this.templates = (EmailTemplateCollection)serializer.Deserialize(fs);

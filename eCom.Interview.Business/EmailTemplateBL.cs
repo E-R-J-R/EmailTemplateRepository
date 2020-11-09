@@ -7,6 +7,7 @@ using LinqKit;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using System.Globalization;
 
 namespace eCom.Interview.Business
 {
@@ -19,11 +20,20 @@ namespace eCom.Interview.Business
             _repository = repository;
         }
 
+        /// <summary>
+        /// Get all templates
+        /// </summary>
+        /// <returns>List<EmailTemplate></returns>
         public List<EmailTemplate> GetEmailTemplateList()
         {
             return _repository.Templates().Result.ToList();
         }
 
+        /// <summary>
+        /// Get paged templates list, ordered and filtered by values in SearchParam
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns>EmailResponse</returns>
         public EmailResponse GetPagedEmailTemplateList(SearchParam param)
         {
             var rows = param.PageSize ?? ApplicationSettings.DefaultPageSize;
@@ -46,18 +56,17 @@ namespace eCom.Interview.Business
 
         }
 
-        //Set to Public for Unit Testing
-        public ExpressionStarter<EmailTemplate> BuildWhere(string searchField, string searchText)
+        private ExpressionStarter<EmailTemplate> BuildWhere(string searchField, string searchText)
         {
             var pred = PredicateBuilder.New<EmailTemplate>();
 
             if (searchField == EmailTemplateField.EmailLabel.ToString())
             {
-                return pred.And(s => s.EmailLabel.Contains(searchText));
+                return pred.And(s => s.EmailLabel.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) != -1);
             }
             else if (searchField == EmailTemplateField.FromAddress.ToString())
             {
-                return pred.And(s => s.FromAddress.Contains(searchText));  
+                return pred.And(s => s.FromAddress.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) != -1);  
             }
             else
             {
@@ -65,8 +74,7 @@ namespace eCom.Interview.Business
             }
         }
 
-        //Set to public for Unit Testing
-        public List<EmailTemplate> GetOrderedList(List<EmailTemplate> result, string orderBy, bool desc)
+        private List<EmailTemplate> GetOrderedList(List<EmailTemplate> result, string orderBy, bool desc)
         {
 
             if (orderBy == EmailTemplateField.FromAddress.ToString())

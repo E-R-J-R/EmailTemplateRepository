@@ -15,6 +15,10 @@ namespace eCom.Interview.Web.Controllers
             _emailTemplateBl = emailTemplateBl;
         }
 
+        /// <summary>
+        /// Get all templates
+        /// </summary>
+        /// <returns>List<EmailTemplate></returns>
         [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
         [Route("api/emailtemplate/get")]
         [HttpGet]
@@ -23,6 +27,11 @@ namespace eCom.Interview.Web.Controllers
             return _emailTemplateBl.GetEmailTemplateList();
         }
 
+        /// <summary>
+        /// Get paged templates list, ordered and filtered by values in SearchParam
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns>EmailResponse</returns>
         [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
         [Route("api/emailtemplate/getpaged")]
         [HttpPost]

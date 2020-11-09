@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace eCom.Interview.Web
 {
@@ -8,8 +7,6 @@ namespace eCom.Interview.Web
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            const string ANGULAR_APP_ROOT = "~/App/dist/App/";
-
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -24,15 +21,6 @@ namespace eCom.Interview.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
-
-            //Angular
-            //var scriptBundle = new ScriptBundle("~/bundles/angular")
-            //    .IncludeDirectory(
-            //        ANGULAR_APP_ROOT,
-            //        searchPattern: "*.js",
-            //        searchSubdirectories: true
-            //    );
-            //bundles.Add(scriptBundle);
         }
     }
 }

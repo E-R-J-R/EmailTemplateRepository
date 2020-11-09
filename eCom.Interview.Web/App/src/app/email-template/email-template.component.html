@@ -6,8 +6,8 @@
       <th scope="col"><a class="text-primary" (click)="sortField('DateUpdated')">Date Updated</a> <i class="fa fa-fw fa-sort"></i></th>
     </tr>
     <tr>
-      <th><input type="text" class="col-sm-3" [(ngModel)]="searchLabel" (blur)="onLabelBlur()" placeholder="Search Email Label"></th>
-      <th><input type="text" [(ngModel)]="searchAddress" (blur)="onAddressBlur()" placeholder="Search From Address"></th>
+      <th><input type="text" class="col-sm-3" [(ngModel)]="searchLabel" (blur)="onLabelBlur()" placeholder="Search Email Label" (keydown.enter)="$event.target.blur();"></th>
+      <th><input type="text" [(ngModel)]="searchAddress" (blur)="onAddressBlur()" placeholder="Search From Address" (keydown.enter)="$event.target.blur();"></th>
       <th></th>
     </tr>
   </thead>

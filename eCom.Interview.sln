@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eCom.Interview.Core", "eCom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eCom.Interview.DTO", "eCom.Interview.DTO\eCom.Interview.DTO.csproj", "{140720CA-6BA0-425E-B0CB-7CE053CEB0A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eCom.Interview.Business.Tests", "eCom.Interview.Business.Tests\eCom.Interview.Business.Tests.csproj", "{4E42F59E-C0B4-4AA9-9FF4-81F08096C50F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{140720CA-6BA0-425E-B0CB-7CE053CEB0A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{140720CA-6BA0-425E-B0CB-7CE053CEB0A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{140720CA-6BA0-425E-B0CB-7CE053CEB0A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E42F59E-C0B4-4AA9-9FF4-81F08096C50F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E42F59E-C0B4-4AA9-9FF4-81F08096C50F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E42F59E-C0B4-4AA9-9FF4-81F08096C50F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E42F59E-C0B4-4AA9-9FF4-81F08096C50F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
